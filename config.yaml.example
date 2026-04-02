@@ -1,0 +1,73 @@
+# ContentLoop Configuration
+# Copy this file to config.yaml and fill in your API credentials
+
+env: production
+author: "Adrien Bird"
+blog_url: "https://adrienbird.net/blog"
+blog_path: "~/sources/adrienbird/src/app/blog/posts/"
+
+social:
+  linkedin:
+    enabled: true
+    access_token: "YOUR_LINKEDIN_ACCESS_TOKEN"
+    organisation_id: "YOUR_ORGANISATION_ID"
+
+  twitter:
+    enabled: true
+    access_token: "YOUR_TWITTER_ACCESS_TOKEN"
+    access_secret: "YOUR_TWITTER_ACCESS_SECRET"
+    api_key: "YOUR_TWITTER_API_KEY"
+    api_secret: "YOUR_TWITTER_API_SECRET"
+    bearer_token: "YOUR_TWITTER_BEARER_TOKEN"
+
+  youtube:
+    enabled: true
+    access_token: "YOUR_YOUTUBE_ACCESS_TOKEN"
+    refresh_token: "YOUR_YOUTUBE_REFRESH_TOKEN"
+    client_id: "YOUR_YOUTUBE_CLIENT_ID"
+    client_secret: "YOUR_YOUTUBE_CLIENT_SECRET"
+    channel_id: "YOUR_YOUTUBE_CHANNEL_ID"
+    default_playlist: "YOUR_PLAYLIST_ID"
+
+  threads:
+    enabled: true
+    access_token: "YOUR_THREADS_ACCESS_TOKEN"
+    user_id: "YOUR_THREADS_USER_ID"
+
+openai:
+  enabled: true
+  api_key: "YOUR_OPENAI_API_KEY"
+  model: "gpt-4o"
+  max_tokens: 4000
+
+anthropic:
+  enabled: true
+  api_key: "YOUR_ANTHROPIC_API_KEY"
+  model: "claude-sonnet-4-20250514"
+  max_tokens: 8000
+
+scheduling:
+  timezone: "America/New_York"
+  blog_cadence: 3  # Blog post every 3 hours
+  social_cadence: 1  # Social post every hour
+  quiet_hours:
+    enabled: false
+    start: "22:00"
+    end: "08:00"
+    timezone: "America/New_York"
+
+analytics:
+  google_analytics:
+    enabled: true
+    measurement_id: "YOUR_GA4_MEASUREMENT_ID"
+    api_secret: "YOUR_GA_API_SECRET"
+
+  plausible:
+    enabled: false
+    domain: "adrienbird.net"
+    api_key: "YOUR_PLAUSIBLE_API_KEY"
+
+  custom_analytics:
+    enabled: false
+    endpoint: "https://your-analytics.com/events"
+    api_key: "YOUR_CUSTOM_API_KEY"

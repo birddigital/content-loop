@@ -1,0 +1,26 @@
+[Unit]
+Description=ContentLoop - Automated Content Generation Service
+After=network.target
+
+[Service]
+Type=simple
+User=birddigital
+WorkingDirectory=/home/birddigital/sources/standalone-projects/content-loop
+ExecStart=/home/birddigital/.local/bin/content-loop
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=content-loop
+
+# Resource limits
+LimitNOFILE=1024
+
+# Environment
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+Environment="TZ=America/New_York"
+
+[Install]
+WantedBy=multi-user.target
